@@ -1,6 +1,7 @@
 import pygame
 import sys
 import random
+import os
 vec = pygame.math.Vector2
 
 
@@ -84,17 +85,23 @@ pygame.init()
 clock = pygame.time.Clock()
 
 
-screen_width = 1920
-screen_height = 1080
+screen_width = 1250
+screen_height = 750
 screen = pygame.display.set_mode(
     (screen_width, screen_height), pygame.FULLSCREEN | pygame.SCALED)
-background = pygame.image.load("./bg_blue.png")
-bgSurface = pygame.Surface((screen_width, screen_height))
+image_sky = pygame.image.load("onlysky.png").convert_alpha()
+image_foreground = pygame.image.load("ducknobg.png").convert_alpha()
+
+surface_sky = pygame.Surface((screen_width, screen_height))
+surface_foreground = pygame.Surface((screen_width, screen_height))
+
 pygame.mouse.set_visible(False)
 
-for y in range(0, screen_height, 256):
-    for x in range(0, screen_width, 256):
-        bgSurface.blit(background, (x, y))
+# pygame.transform.scale(background,(screen_width,screen_height))
+surface_sky.blit(image_sky, (0, 0))
+
+# pygame.transform.scale(background2,(screen_width,screen_height))
+surface_foreground.blit(image_foreground, (0, 0))
 
 
 crosshair = Crosshair("./crosshair_red_large.png")
@@ -124,7 +131,8 @@ while True:
             crosshair.shoot()
 
     pygame.display.flip()
-    screen.blit(bgSurface, (0, 0))
+    screen.blit(surface_sky, (0, 0))
+    # screen.blit(surface_foreground,(0, 0))
     target_group.draw(screen)
     target_group.update()
     crosshair_group.draw(screen)
