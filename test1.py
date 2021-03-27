@@ -8,26 +8,26 @@ win = pygame.display.set_mode((500, 500))
 pygame.display.set_caption("First Game")
 
 walkRight = [
-    pygame.image.load('pygame1/L1.png'),
-    pygame.image.load('pygame1/L2.png'),
-    pygame.image.load('pygame1/L3.png'),
-    pygame.image.load('pygame1/L4.png'),
+    pygame.image.load('./L1.png'),
+    pygame.image.load('./L2.png'),
+    pygame.image.load('./L3.png'),
+    pygame.image.load('./L4.png'),
 ]
 walkLeft = [
-    pygame.image.load('pygame1/R1.png'),
-    pygame.image.load('pygame1/R2.png'),
-    pygame.image.load('pygame1/R3.png'),
-    pygame.image.load('pygame1/R4.png'),
+    pygame.image.load('./R1.png'),
+    pygame.image.load('./R2.png'),
+    pygame.image.load('./R3.png'),
+    pygame.image.load('./R4.png'),
 ]
 
-bg = pygame.image.load('pygame1/Background.png')
-char = pygame.image.load('pygame1/Idle.png')
+bg = pygame.image.load('./Background.png')
+char = pygame.image.load('./Idle.png')
 
-bulletSound = pygame.mixer.Sound('pygame1/Bullet.wav')
-hitSound = pygame.mixer.Sound('pygame1/Hurt.wav')
-deathSound = pygame.mixer.Sound('pygame1/Death.wav')
+bulletSound = pygame.mixer.Sound('./Bullet.wav')
+hitSound = pygame.mixer.Sound('./Hurt.wav')
+deathSound = pygame.mixer.Sound('./Death.wav')
 
-music = pygame.mixer.music.load('pygame1/BG.mp3')
+music = pygame.mixer.music.load('./BG.mp3')
 pygame.mixer.music.play(-1)
 
 score = 0
@@ -35,17 +35,17 @@ score = 0
 
 class enemy(object):
     walkRight = [
-        pygame.image.load('pygame1/LE1.png'),
-        pygame.image.load('pygame1/LE2.png'),
-        pygame.image.load('pygame1/LE3.png'),
-        pygame.image.load('pygame1/LE4.png'),
+        pygame.image.load('./LE1.png'),
+        pygame.image.load('./LE2.png'),
+        pygame.image.load('./LE3.png'),
+        pygame.image.load('./LE4.png'),
     ]
 
     walkLeft = [
-        pygame.image.load('pygame1/RE1.png'),
-        pygame.image.load('pygame1/RE2.png'),
-        pygame.image.load('pygame1/RE3.png'),
-        pygame.image.load('pygame1/RE4.png'),
+        pygame.image.load('./RE1.png'),
+        pygame.image.load('./RE2.png'),
+        pygame.image.load('./RE3.png'),
+        pygame.image.load('./RE4.png'),
     ]
 
     def __init__(self, x, y, width, height, end, health):
